@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+
+<body>
+    <script>
+        /*function foo() {
+            // console.log(this)
+            console.log(this.a)
+        }
+        var a = 0;
+        foo();
+
+        const obj = {
+            a: 1,
+            foo: foo
+        }
+        obj.foo()
+        const c = new foo()*/
+        /*function a() {
+            console.log(this, '0000')
+            return () => {
+                console.log(this, '1111')
+                return () => {
+                    console.log(this, '2222')
+                }
+            }
+        }
+        console.log(a()()())*/
+        /*let a = {}
+        let fn = function () { console.log(this, '----') }
+        fn.bind().bind(a)() // => ?*/
+
+
+        let datas = { name: 'hello' }
+        function foo() {
+            console.log(this.name)
+        }
+        foo.bind(datas)() 
+    </script>
+</body>
+
+</html>
