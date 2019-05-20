@@ -64,5 +64,4 @@ let datas={name:'hello'}
 
 首先，new 的方式优先级最高，接下来是 bind 这些函数，然后是 obj.foo() 这种调用方式，最后是 foo 这种调用方式，同时，箭头函数的 this 一旦被绑定，就不会再被任何方式所改变。
 
-						![cover_high](https://user-gold-cdn.xitu.io/2018/11/15/16717eaf3383aae8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)				
-													
+	      ![Image text](https://user-gold-cdn.xitu.io/2018/11/15/16717eaf3383aae8?imageslim)					
