@@ -22,6 +22,8 @@
         }
         obj.foo()
         const c = new foo()*/
+
+
         /*function a() {
             console.log(this, '0000')
             return () => {
@@ -32,16 +34,51 @@
             }
         }
         console.log(a()()())*/
+
+
         /*let a = {}
         let fn = function () { console.log(this, '----') }
         fn.bind().bind(a)() // => ?*/
+        /* let datas = { name: 'hello' }
+         function foo() {
+             console.log(this.name)
+         }
+         foo.bind(datas)() */
 
 
-        let datas = { name: 'hello' }
-        function foo() {
-            console.log(this.name)
+
+        /* //对象的地址改变的问题
+         function test(person) {
+             person.age = 26
+             person = {
+                 name: 'yyy',
+                 age: 30
+             }
+             return person
+         }
+         const p1 = {
+             name: 'yck',
+             age: 25
+         }
+         const p2 = test(p1)
+         console.log(p1, 'p1') // -> ?
+         console.log(p2, 'p2') // -> ?*/
+
+        //  数据基本类型
+        // number Boolean string null undefined Symbol   对象类型 object
+        /*var srt = null
+        console.log(srt instanceof Object)*/
+        function student(age, name, grade) {
+            this.age = age;
+            this.name = name;
+            this.score = grade;
         }
-        foo.bind(datas)() 
+        var s1 = new student(18, "yz", 100);//创建一个student对象
+        function a(s) {
+            s.name = "hello";
+        }
+        a(s1)//把s1赋给s
+        console.log(s1.name);//输出hello
     </script>
 </body>
 

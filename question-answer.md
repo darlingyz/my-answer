@@ -64,5 +64,40 @@ let datas={name:'hello'}
 
 首先，new 的方式优先级最高，接下来是 bind 这些函数，然后是 obj.foo() 这种调用方式，最后是 foo 这种调用方式，同时，箭头函数的 this 一旦被绑定，就不会再被任何方式所改变。
 
-						![Image text](https://user-gold-cdn.xitu.io/2018/11/15/16717eaf3383aae8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)				
-													
+						![Image text](https://user-gold-cdn.xitu.io/2018/11/15/16717eaf3383aae8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)		
+
+
+
+2、JS中基本数据类型有哪几种？null 是对象吗？基本数据和复杂数据类型有什么区别？		
+		JS的基本数据类型:null string number  Symbol undefined boolean  对象类型 object
+		null 不是对象 检测null 是不是对象 typeof 检测不出来，用instanceof 
+		原因：在JS的最初版本中使用的是32位系统，为了性能考虑使用低位存储变量的类型信息，000开头的是对象，null是全0，所以将null误判为Object了，虽然现在的内部类型判断代码已经改变了，但bug永久的遗留下来了
+		eg:
+		  var srt = null
+        console.log(srt instanceof Object)//false 说明不是对象
+			基本数据类型和复杂数据类型区别: 
+			基本数据类型把数据名和值直接存储在栈当中,
+			复杂数据类型在栈中存储数据名和一个堆的地址，在堆中存储属性及值，访问时先从栈中获取地址，再到堆中拿出相应的值
+			基本数据类型作为参数时，函数内部对参数值的修改不会改变外部变量的值
+			因为复杂数据类型赋值是把栈中对象的地址赋给变量，函数内外两个变量指向同一个对象，所以只要对象的属性值改变，两个变量值都会改变
+		eg:	function student(age, name, grade) {
+            this.age = age;
+            this.name = name;
+            this.score = grade;
+        }
+        var s1 = new student(18, "yz", 100);//创建一个student对象
+        function a(s) {
+            s.name = "hello";
+        }
+        a(s1)//把s1赋给s
+        console.log(s1.name);//输出hello
+
+3、说一说你对HTML5语义化的理解
+	HTML5新增了语义化标签 ，所谓语义化标签就是能够准确的知道他所谓的标签的用意 比如：footer,就能够明确的只知道是在文章的底部；
+	此外，语义化标签也有利于爬虫的爬去，对于seo有好处，提升网络搜索量。增强可读性
+	语义类标签对开发者更为友好,使用语义类标签增强了可读性,即便是在没有 CSS 的时开发者也能够清晰地看出网页的结构，也更为便于团队的开发和维护...
+	除了对人类友好之外，语义类标签也十分适宜机器阅读。它的文字表现力丰富
+	更适合搜索引擎检索（SEO），也可以让搜索引擎爬虫更好地获取到更多有效信息，有效提升网页的搜索
+	并且语义类还可以支持读屏软件，根据文章可以自动生成目录等等，
+	header	article	section	address	footer	abbr	figure 	figcaption	dfn audio video aside hgroup mark 
+	那么，你知道有多少语义标签呢
