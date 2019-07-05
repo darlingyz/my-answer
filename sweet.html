@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>sweet</title>
+</head>
+
+<body>
+    <script>
+        function tab(date) {
+            var oDate = new Date();
+            var nY = oDate.getFullYear();
+            var nM = oDate.getMonth();
+            var nD = oDate.getDate();
+            var newDate = new Date(nY, nM, nD, 0, 0, 0);
+            var date = date.split('-');
+            var lastDate = new Date(date[0], (date[1] - 1), date[2], 0, 0, 0);
+            var result = '';
+            if (newDate.getTime() > lastDate.getTime()) {
+                result = date[0] + '年' + date[1] + '月' + date[2] + '日到今天已经过去了（' + (newDate.getTime() - lastDate.getTime()) / 86400000 + '）天了';
+            } else {
+                result = date[0] + '年' + date[1] + '月' + date[2] + '日到今天还有（' + Math.abs(newDate.getTime() - lastDate.getTime()) / 86400000 + '）天了';
+            }
+            return result;
+        }
+        console.log(tab('2019-05-22'));
+        var daysComputed = function (time) {
+            var oldTimeFormat = new Date(time.replace(/-/g, '/'));
+            var nowDate = new Date();
+            if (nowDate.getTime() - oldTimeFormat.getTime() > 0) {
+                var times = nowDate.getTime() - oldTimeFormat.getTime();
+                var days = parseInt(times / (60 * 60 * 24 * 1000));
+                return days;
+            } else {
+                throw ('传入时间不能大于当前日期');
+            }
+        }
+        daysComputed('2019-05-22');
+        document.write('距离今天已经' + daysComputed('2019-05-22') + '天啦')
+        console.log(daysComputed('2019-05-22'))
+    </script>
+
+</body>
+
+</html>

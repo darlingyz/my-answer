@@ -68,17 +68,70 @@
         // number Boolean string null undefined Symbol   对象类型 object
         /*var srt = null
         console.log(srt instanceof Object)*/
-        function student(age, name, grade) {
-            this.age = age;
-            this.name = name;
-            this.score = grade;
+        /*& function student(age, name, grade) {
+             this.age = age;
+             this.name = name;
+             this.score = grade;
+         }
+         var s1 = new student(18, "yz", 100);//创建一个student对象
+         function a(s) {
+             s.name = "hello";
+         }
+         a(s1)//把s1赋给s
+         console.log(s1.name);//输出hello*/
+        /* var a = 3;
+         var a = 2;
+         var a = 1;
+         if (a == 1 && a == 2 && a == 3) {
+             console.log('0000')
+         } else if (a == 1 && a == 2) {
+             console.log('1111')
+         } else if (a == 3) {
+             console.log('2222')
+         } else {
+             console.log('3333')
+         }*/
+        // if (a == 3) {
+        //     console.log('0000')
+        // } else {
+        //     console.log('1111')
+        // }
+        /*const a = [1, 2, 3];
+        a.join = a.shift;
+        console.log(a == 1 && a == 2 && a == 3);*/
+
+        /*var a = 3, a = 2, a = 1;
+        if (!(a == 1 && a == 2 && a == 3)) {
+            console.log('0000')
+        } else {
+            console.log('1111')
+        }*/
+        /* const obj = {
+             name: 'Hello',
+             age: 18
+         }
+         obj.name = 'Hello world'
+         console.log(obj)*/
+
+
+        /*function hello() {
+            let a = 0;
+            console.log(a, 'hello')
+            if (true) {
+                let a = 0;
+                console.log(a, 'obj')
+            }
         }
-        var s1 = new student(18, "yz", 100);//创建一个student对象
-        function a(s) {
-            s.name = "hello";
+        let b = new hello()
+        console.log(b)*/
+        function foo() {
+            var a = 1;
+            return function fun() {
+                console.log(a)
+            }
         }
-        a(s1)//把s1赋给s
-        console.log(s1.name);//输出hello
+        let func = foo();
+        func();
     </script>
 </body>
 
